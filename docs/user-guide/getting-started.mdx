@@ -2,48 +2,237 @@
 id: getting-started
 title: Getting Started
 ---
+<?xml version="1.0"?><!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf>
+<head>
+	<link name="NotoSans" type="font" subtype="truetype" src="${nsfont.NotoSans_Regular}" src-bold="${nsfont.NotoSans_Bold}" src-italic="${nsfont.NotoSans_Italic}" src-bolditalic="${nsfont.NotoSans_BoldItalic}" bytes="2" />
+	<#if .locale == "zh_CN">
+		<link name="NotoSansCJKsc" type="font" subtype="opentype" src="${nsfont.NotoSansCJKsc_Regular}" src-bold="${nsfont.NotoSansCJKsc_Bold}" bytes="2" />
+	<#elseif .locale == "zh_TW">
+		<link name="NotoSansCJKtc" type="font" subtype="opentype" src="${nsfont.NotoSansCJKtc_Regular}" src-bold="${nsfont.NotoSansCJKtc_Bold}" bytes="2" />
+	<#elseif .locale == "ja_JP">
+		<link name="NotoSansCJKjp" type="font" subtype="opentype" src="${nsfont.NotoSansCJKjp_Regular}" src-bold="${nsfont.NotoSansCJKjp_Bold}" bytes="2" />
+	<#elseif .locale == "ko_KR">
+		<link name="NotoSansCJKkr" type="font" subtype="opentype" src="${nsfont.NotoSansCJKkr_Regular}" src-bold="${nsfont.NotoSansCJKkr_Bold}" bytes="2" />
+	<#elseif .locale == "th_TH">
+		<link name="NotoSansThai" type="font" subtype="opentype" src="${nsfont.NotoSansThai_Regular}" src-bold="${nsfont.NotoSansThai_Bold}" bytes="2" />
+	</#if>
+    <macrolist>
+        <macro id="nlfooter">
+            <table align="right" border="0" cellpadding="1" cellspacing="1" style="font-size:10pt;width:100%;"><tr>
+	<td>&nbsp;</td>
+	<td style="align: center;"><strong>丰益科技股份有限公司${companyinformation.companyname}</strong></td>
+	</tr>
+	<tr>
+	<td>&nbsp;</td>
+	<td style="align: center;">&nbsp;</td>
+	</tr>
+	<tr>
+	<td>&nbsp;</td>
+	<td>&nbsp;</td>
+	</tr>
+	<tr>
+	<td style="height: 18px;">&nbsp;</td>
+	<td style="height: 18px; border-bottom:2px;">&nbsp;</td>
+	</tr>
+	<tr>
+	<td style="height: 18px;">&nbsp;</td>
+	<td style="height: 18px; align: right;">FM0801A</td>
+	</tr></table>
+        </macro>
+    </macrolist>
+    <style type="text/css">* {
+		<#if .locale == "zh_CN">
+			font-family: NotoSans, NotoSansCJKsc, sans-serif;
+		<#elseif .locale == "zh_TW">
+			font-family: NotoSans, NotoSansCJKtc, sans-serif;
+		<#elseif .locale == "ja_JP">
+			font-family: NotoSans, NotoSansCJKjp, sans-serif;
+		<#elseif .locale == "ko_KR">
+			font-family: NotoSans, NotoSansCJKkr, sans-serif;
+		<#elseif .locale == "th_TH">
+			font-family: NotoSans, NotoSansThai, sans-serif;
+		<#else>
+			font-family: NotoSans, sans-serif;
+		</#if>
+		}
+        table {
+            font-size: 9pt;
+            table-layout: fixed;
+        }
+        th {
+            font-weight: bold;
+            font-size: 8pt;
+            vertical-align: middle;
+            padding: 5px 6px 3px;
+            background-color: #e3e3e3;
+            color: #333333;
+        }
+        td {
+            padding: 4px 6px;
+        }
+		td p {align:left }
+        b {
+            font-weight: bold;
+            color: #333333;
+        }
+        table.header td {
+            padding: 0;
+            font-size: 10pt;
+        }
+        table.footer td {
+            padding: 0;
+            font-size: 8pt;
+        }
+        table.itemtable th {
+            padding-bottom: 10px;
+            padding-top: 10px;
+        }
+        table.body td {
+            padding-top: 2px;
+        }
+        table.total {
+            page-break-inside: avoid;
+        }
+        tr.totalrow {
+            background-color: #e3e3e3;
+            line-height: 200%;
+        }
+        td.totalboxtop {
+            font-size: 12pt;
+            background-color: #e3e3e3;
+        }
+        td.addressheader {
+            font-size: 8pt;
+            padding-top: 6px;
+            padding-bottom: 2px;
+        }
+        td.address {
+            padding-top: 0;
+        }
+        td.totalboxmid {
+            font-size: 28pt;
+            padding-top: 20px;
+            background-color: #e3e3e3;
+        }
+        td.totalboxbot {
+            background-color: #e3e3e3;
+            font-weight: bold;
+        }
+        span.title {
+            font-size: 28pt;
+        }
+        span.number {
+            font-size: 16pt;
+        }
+        span.itemname {
+            font-weight: bold;
+            line-height: 150%;
+        }
+        hr {
+            width: 100%;
+            color: #d3d3d3;
+            background-color: #d3d3d3;
+            height: 1px;
+        }
+</style>
+</head>
+<body footer="nlfooter" footer-height="20pt" padding="10mm 10mm 20mm 10mm" size="A4">
+    <div style="text-align: right;">&nbsp;</div>
 
-import Tabs from '@theme/Tabs'
-import TabItem from '@theme/TabItem'
+<div style="text-align: right;">&nbsp;</div>
 
-1\. Use npm to install HTMLHint:
+<table border="0" cellpadding="1" cellspacing="1" style="font-size:10pt;width:100%; align: center;"><tr>
+	<td style="white-space: nowrap; vertical-align: top;"><img src="${companyInformation.logoUrl}" style="width: 150px; height: 60px; float: left; margin: 0px 1px;" /></td>
+	<td colspan="4" style="align: center; white-space: nowrap;"><span style="font-size:20px">${companyinformation.companyname}</span><br />${companyinformation.mainaddress_text}<br />TEL: +886-7-7889990&nbsp; FAX:&nbsp;${companyinformation.fax}</td>
+	</tr>
+	<tr>
+	<td colspan="5" style="align: center;"><span style="font-size:20px;"><strong>報價單</strong></span></td>
+	</tr></table>
 
-<Tabs
-  defaultValue="npm"
-  values={[
-    { label: 'npm', value: 'npm', },
-    { label: 'yarn', value: 'yarn', },
-  ]
-}>
+<hr />
+<table border="0" cellpadding="3" cellspacing="1" style="font-size:10pt;width:100%"><tr>
+	<td>&nbsp;</td>
+	<td>報價日期:${record.trandate}</td>
+	</tr>
+	<tr>
+	<td>&nbsp;</td>
+	<td>報價單號:&nbsp;${record.tranid}</td>
+	</tr>
+	<tr>
+	<td>客戶名稱:&nbsp;${record.entity}</td>
+	<td>頁次:&nbsp;&nbsp;<pagenumber/>/<totalpages/></td>
+	</tr>
+	<tr>
+	<td>聯絡人:&nbsp;${record.contact.entityid}</td>
+	<td>供應商: ${companyinformation.companyname}</td>
+	</tr>
+	<tr>
+	<td style="white-space: nowrap;">聯絡地址:&nbsp;${record.shippingaddress.addr1}</td>
+	<td>聯繫人:&nbsp;${record.salesrep}</td>
+	</tr>
+	<tr>
+	<td>電話:&nbsp;${record.contact.phone}</td>
+	<td>聯絡地址:&nbsp;高雄市大寮區華東路19號</td>
+	</tr>
+	<tr>
+	<td>傳真:&nbsp;${record.contact.fax}</td>
+	<td>電話:&nbsp; +886 7 788 9990 ext24</td>
+	</tr>
+	<tr>
+	<td>電子信箱:&nbsp;${record.contact.email}</td>
+	<td>傳真:&nbsp;${companyinformation.fax}</td>
+	</tr>
+	<tr>
+	<td>客戶參考編號:&nbsp;${record.tranid}</td>
+	<td>電子信箱:&nbsp;${record.custbody_flkcat_employee_email}</td>
+	</tr>
+	<tr>
+	<td>&nbsp;</td>
+	<td>手機:&nbsp;${record.custbody_flkcat_employee_mobilephone}</td>
+	</tr>
+	<tr>
+	<td>&nbsp;</td>
+	<td>幣別:&nbsp;&nbsp;${record.currency}</td>
+	</tr></table>
 
-<TabItem value="npm">
+<table class="itemtable" style="width: 100%; margin-top: 10px;"><#assign linenum=1><!-- start items --><#list record.item as item><#if item_index==0>
+<thead>
+	<tr>
+	<th align="center" colspan="3">項次</th>
+	<th align="left" colspan="8">${item.item@label}</th>
+	<th align="center" colspan="2">${item.units@label}</th>
+	<th align="center" colspan="3">${item.quantity@label}</th>
+	<th align="right" colspan="6">${item.rate@label}</th>
+	<th align="right" colspan="6">${item.amount@label}</th>
+	</tr>
+</thead>
+</#if><tr>
+	<td align="center" colspan="3">${linenum}</td>
+	<td align="left" colspan="8">${item.item_display}</td>
+	<td align="center" colspan="2">${item.units}</td>
+	<td align="center" colspan="3">${item.quantity}</td>
+	<td align="right" colspan="6">${item.rate}</td>
+	<td align="right" colspan="6">${item.amount}</td>
+	<#assign linenum=linenum + 1></tr>
+	</#list><!-- end items --></table>
 
-```shell
-npm install --save-dev htmlhint
-```
-
-</TabItem>
-
-<TabItem value="yarn">
-
-```shell
-yarn add --dev htmlhint
-```
-
-</TabItem>
-
-</Tabs>
-
-2\. Create a `.htmlhintrc` configuration file in the root of your project:
-
-```shell
-{
-  "attr-value-not-empty": false
-}
-```
-
-3\. Run HTMLHint on, for example, all the HTML files in your project:
-
-```shell
-npx htmlhint "**/*.html"
-```
+<hr />
+<table class="total" style="width: 100%; margin-top: 10px;"><tr>
+	<td colspan="4">&nbsp;</td>
+	<td align="right"><b>${record.subtotal@label}</b></td>
+	<td align="right">${record.subtotal}</td>
+	</tr>
+	<tr>
+	<td colspan="4">&nbsp;</td>
+	<td align="right"><b>${record.taxtotal@label} (${record.taxrate}%)</b></td>
+	<td align="right">${record.taxtotal}</td>
+	</tr>
+	<tr class="totalrow">
+	<td background-color="#ffffff" colspan="4">&nbsp;</td>
+	<td align="right"><b>${record.total@label}</b></td>
+	<td align="right">${record.total}</td>
+	</tr></table>
+<br />備註:&nbsp;<br />報價單有效日期:&nbsp;${record.duedate}<br />交貨方式說明：${record.custbody_flkcat_incoterms}<br />${record.memo}
+</body>
+</pdf> 
